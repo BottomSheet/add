@@ -28,7 +28,7 @@
     <!-- Photo break -->
     <div class="photo-break">
       <div class="photo-break__img-wrap" :class="{ visible: photoBreakVisible }" ref="photoBreakRef">
-        <img src="/photos/p2.jpg" alt="Ева смотрит вверх" />
+        <img :src="photo('p2.jpg')" alt="Ева смотрит вверх" />
         <div class="photo-break__overlay">
           <span>{{ photoCaption }}</span>
         </div>
@@ -52,7 +52,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import { useReveal } from '../composables/useEffects.js'
+import { useReveal, photo } from '../composables/useEffects.js'
 
 const letters = ref([
   {

@@ -17,7 +17,7 @@
     <!-- Photo with spinning ring -->
     <div class="photo-wrap reveal-scale" :class="{ visible: vis.photo }" ref="photoRef">
       <div class="photo-ring">
-        <img src="/photos/p10.jpg" alt="Ева" />
+        <img :src="photo('p10.jpg')" alt="Ева" />
       </div>
       <div class="photo-hearts">
         <span v-for="h in floatingHearts" :key="h.id" class="float-heart"
@@ -82,7 +82,7 @@
 
 <script setup>
 import { ref, reactive, computed, onMounted, onUnmounted } from 'vue'
-import { spawnSpark, say, launchConfetti, useReveal } from '../composables/useEffects.js'
+import { spawnSpark, say, launchConfetti, useReveal, photo } from '../composables/useEffects.js'
 
 // ── Petals ────────────────────────────────────────────────────────────────────
 const PETAL_COLORS = ['#ffb8d4','#ffd6e7','#f5d0fe','#ffaecf','#ffd97d','#ff7eb6']
@@ -168,9 +168,9 @@ function heartTap(e) {
 
 // ── All photos ────────────────────────────────────────────────────────────────
 const allPhotos = [
-  '/photos/p1.jpg', '/photos/p2.jpg', '/photos/p4.jpg',
-  '/photos/p5.jpg', '/photos/p6.jpg', '/photos/p7.jpg',
-  '/photos/p10.jpg', '/photos/p11.jpg',
+  photo('p1.jpg'), photo('p2.jpg'), photo('p4.jpg'),
+  photo('p5.jpg'), photo('p6.jpg'), photo('p7.jpg'),
+  photo('p10.jpg'), photo('p11.jpg'),
 ]
 </script>
 

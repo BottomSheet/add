@@ -116,3 +116,8 @@ export function useReveal(threshold = 0.2) {
 
   return { observe, cleanup }
 }
+
+// ─── Photo helper ─────────────────────────────────────────────────────────────
+export function photo(name) {
+  return import.meta.env.BASE_URL + 'photos/' + name
+}

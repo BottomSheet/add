@@ -27,7 +27,7 @@
 
       <!-- Photo ring -->
       <div class="photo-ring" @click="photoTap">
-        <img src="/photos/p7.jpg" alt="Ева" class="photo-ring__img" />
+        <img :src="photo('p7.jpg')" alt="Ева" class="photo-ring__img" />
       </div>
 
       <!-- Name -->
@@ -56,7 +56,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { spawnSpark, say, useTouchTrail } from '../composables/useEffects.js'
+import { spawnSpark, say, useTouchTrail, photo } from '../composables/useEffects.js'
 
 const { onTouchMove } = useTouchTrail()
 
